@@ -1,0 +1,16 @@
+#Chunks of MySQL that can be helpful. DO NOT RUN!
+
+
+#This is a quick and dirty way of clearing a table. NB: DOES NOT WORK with foreign keys
+
+TRUNCATE TABLE <$table>;
+
+
+#This turns off "safe updates", drops every piece of information in a table, resets the auto_increment, then turns "safe updates" back on.
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM <$table>;
+ALTER TABLE <$table> AUTO_INCREMENT = 1;
+SET SQL_SAFE_UPDATES = 1;
+
+
+
